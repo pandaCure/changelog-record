@@ -1,0 +1,41 @@
+{
+  "name": "changelog-record",
+  "version": "1.0.0",
+  "description": "自动生成chengelog",
+  "main": "index.js",
+  "scripts": {
+    "init": "commitizen init cz-conventional-changelog --save-dev --save-exact",
+    "init-log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pandaCure/changelog-record.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pandaCure/changelog-record/issues"
+  },
+  "homepage": "https://github.com/pandaCure/changelog-record#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-angular": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "commitizen": "^4.0.3",
+    "conventional-changelog-cli": "^2.0.23",
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^3.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
