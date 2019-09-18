@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "init": "commitizen init cz-conventional-changelog --save-dev --save-exact",
-    "init-log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    "init-log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "repository": {
     "type": "git",
